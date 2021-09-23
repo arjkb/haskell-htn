@@ -21,3 +21,13 @@ and' :: Bool -> Bool -> Bool
 and' x y = if x == True
             then if y == True then True else False
             else False
+
+-----------------------------------------------------------
+
+-- redefine the following version of && using conditionals
+--     True  && b = b
+--     False && _ = False
+and'' :: Bool -> Bool -> Bool
+and'' x y = if x == True
+                then y
+                else False
