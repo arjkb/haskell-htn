@@ -13,6 +13,21 @@ safetailc :: [a] -> [a]
 safetailc xs = if null xs then [] else tail xs
 
 -----------------------------------------------------------
+-- Give 3 possible definitions of || using pattern matching
+or' :: Bool -> Bool -> Bool
+or' False b = b
+or' True _  = True
+
+or'' :: Bool -> Bool -> Bool
+or'' False False = False
+or'' _ _ = True
+
+or''' True True   = True
+or''' True False  = True
+or''' False True  = True
+or''' False False = False
+
+-----------------------------------------------------------
 
 -- redefine the following version of && using conditionals
 --     True && True = True
