@@ -7,6 +7,12 @@ scalar :: [Int] -> [Int] -> Int
 scalar xs ys = sum [x + y | (x, y) <- zip xs ys]
 
 -------------------------------------------------------
--- perfects
+-- factors
+-- all factors of a given number
 factors :: Int -> [Int]
-factors n = [x | x <- [2..n-1], (mod n x) == 0]
+factors n = [x | x <- [1..n-1], (mod n x) == 0]
+
+-- perfects
+-- Number is the sum of all its factors
+perfects :: Int -> [Int]
+perfects n = [x | x <- [1..n], sum (factors x) == x]
